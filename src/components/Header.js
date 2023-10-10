@@ -9,7 +9,7 @@ import { LOGO } from "../utils/constants";
 const Header = () => {
   const dispatch = useDispatch();
   const newuser = useSelector((store) => store.User);
-  console.log("redux", newuser);
+  // console.log("redux", newuser);
   const navigate = useNavigate();
   const handleSignout = () => {
     signOut(auth)

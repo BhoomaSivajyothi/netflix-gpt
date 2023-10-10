@@ -7,7 +7,7 @@ const Demo = () => {
        name.current="sathish" 
     }, 5000);  
     },[])
-   console.log(name.current) 
+  //  console.log(name.current) 
   return (
     <div>
       <form>

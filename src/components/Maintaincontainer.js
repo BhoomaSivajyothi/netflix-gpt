@@ -5,7 +5,8 @@ import { useSelector } from 'react-redux'
 
 const Maintaincontainer = () => {
     const movies=useSelector((store)=>store.movies?.Nowplayingmovies)
-    const  mainmovies=movies[0]
+    const Mainmovie=movies||[]
+    const  mainmovies=Mainmovie[0]
     if(!movies) return
     const {original_title ,overview,id} =mainmovies
     
