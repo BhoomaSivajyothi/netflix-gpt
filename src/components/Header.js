@@ -5,6 +5,7 @@ import { auth } from '../utils/firebase'
 import { useDispatch, useSelector } from 'react-redux'
 import { addUser, removeUser } from '../utils/store/userSlice'
 import { LOGO } from '../utils/constants'
+import { toggleGptSearchView } from '../utils/store/gptSlice'
 
 const Header = () => {
   const navigate = useNavigate()
@@ -16,6 +17,9 @@ const Header = () => {
     })
     .catch((error) => {
     })
+  }
+  const handleGptSearchClick=()=>{
+    dispatch(toggleGptSearchView());
   }
 
   useEffect(() => {
@@ -46,7 +50,7 @@ const Header = () => {
       alt='logo'
       />
       {user && <div className='flex p-2'>
-        <button className='py-2 px-4 mx-4 my-2 bg-purple-800 text-white rounded-lg'>GPT Search</button>
+        <button className='py-2 px-4 mx-4 my-2 bg-purple-800 text-white rounded-lg ' onClick={handleGptSearchClick}>GPT Search</button>
         <img 
           className='w-12 h-12'
           alt='userIcon'
