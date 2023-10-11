@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import Header from "./Header";
+import { checkValidation } from "../utils/validate";
 import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
@@ -7,12 +8,11 @@ import {
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import { useDispatch } from "react-redux";
+import { addUser } from "../utils/store/userSlice";
 import { NETFLIX_BG, USER_AVATAR } from "../utils/constants";
-import { checkValidation } from "../utils/Validates";
-import { addUser } from "../utils/Userslice";
 
 const Login = () => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
 
   const [isSignInForm, setIsSignInForm] = useState(true);
 
@@ -47,7 +47,7 @@ const Login = () => {
           const user = userCredential.user;
           updateProfile(user, {
             displayName: name.current.value,
-            photoURL: USER_AVATAR,
+            photoURL:USER_AVATAR
           })
             .then(() => {
               const { uid, email, displayName, photoURL } = auth.currentUser;
@@ -93,7 +93,10 @@ const Login = () => {
     <div>
       <Header />
       <div className="absolute">
-        <img src={NETFLIX_BG} alt="background" />
+        <img
+          src ={NETFLIX_BG}
+          alt="background"
+        />
       </div>
       <div
         onSubmit={(e) => e.preventDefault()}

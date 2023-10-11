@@ -1,10 +1,10 @@
-import { useEffect } from "react";
+import React from "react";
 import Login from "./Login";
 import Browse from "./Browse";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const Body = () => {
-  const approuter = createBrowserRouter([
+  const appRouter = createBrowserRouter([
     {
       path: "/",
       element: <Login />,
@@ -13,11 +13,11 @@ const Body = () => {
       path: "/browse",
       element: <Browse />,
     },
-  ]);
+  ]); 
 
   return (
     <div>
-      <RouterProvider router={approuter} />
+      <RouterProvider router={appRouter} />
     </div>
   );
 };

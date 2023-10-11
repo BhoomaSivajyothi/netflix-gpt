@@ -1,17 +1,26 @@
+import React from "react";
+import Header from "./Header";
+import useNowPlayingMovies from "../hooks/useNowPlayingMovies";
+import MainContainer from "./MainContainer";
+import SecondaryContainer from "./SecondaryContainer";
+import usePopularMovies from "../hooks/usePopularMovies";
+import useTopRatedMovies from "../hooks/useTopRatedMovies";
+import useUpComingMovies from "../hooks/useUpComingMovies";
+import GPTSearch from "./GptSearch";
 
-import useNowplayingmovies from '../Hooks/useNowplayingmovies'
-import Header from './Header'
-import Maintaincontainer from './Maintaincontainer'
-import Secondarycontainer from './Secondarycontainer'
 const Browse = () => {
- useNowplayingmovies()
+  useNowPlayingMovies()
+  usePopularMovies()
+  useTopRatedMovies()
+  useUpComingMovies()
   return (
     <div>
-      <Header/>
-      <Maintaincontainer/>
-      <Secondarycontainer/>
+      <Header />
+      <GPTSearch />
+      <MainContainer />
+      <SecondaryContainer />
     </div>
-  )
-}
+  );
+};
 
-export default Browse
+export default Browse;
