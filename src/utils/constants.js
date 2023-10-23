@@ -17,3 +17,4 @@ export const SUPPORTED_LANGUAGES=[
   {identifier:"telugu", name:"Telugu"},
   {identifier:"spanish", name:"Spanish"}
 ]
+//  export  const  OPENAI_KEY= process.env.REACT_APP_OPEANAI_API
