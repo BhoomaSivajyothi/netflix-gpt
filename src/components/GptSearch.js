@@ -7,7 +7,7 @@ const GPTSearch = () => {
     return(
         <div>
          <div className="fixed -z-10">
-          <img className='h-screen object-cover'
+          <img className=' w-full h-screen'
           src ={NETFLIX_BG}
           alt="background"
            />
